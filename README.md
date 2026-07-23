@@ -1,14 +1,14 @@
-[Our::Async::Command](https://github.com/markldevine/raku-Async-Command/blob/main/doc/Async/Command.md)
-================
+Our::Async::Command
+===================
 Run/manage a command in a promise & capture results.
 
-[Our::Async::Command::Multi](https://github.com/markldevine/raku-Async-Command/blob/main/doc/Async/Command/Multi.md)
-=======================
-Run lots of [Async::Command](https://github.com/markldevine/raku-Async-Command/blob/main/doc/Async/Command.md) objects in parallel.
+Our::Async::Command::Multi
+==========================
+Run lots of Our::Async::Command objects in parallel.
 
-[Our::Async::Command::Result](https://github.com/markldevine/raku-Async-Command/blob/main/doc/Async/Command/Result.md)
-========================
-Standard data structure which captures all [Async::Command](https://github.com/markldevine/raku-Async-Command/blob/main/doc/Async/Command.md) activity and outputs.
+Our::Async::Command::Result
+===========================
+Standard data structure which captures all Our::Async::Command activity and outputs.
 
 AUTHOR
 ======

@@ -2,18 +2,18 @@
   "auth": "zef:markldevine",
   "authors": [ "Mark Devine <mark@markdevine.com>" ],
   "depends": [],
-  "description": "Async::Command - Run a command as a thread; Async::Command::Multi - do lots in parallel",
+  "description": "Our::Async::Command - Run a command as a thread; Our::Async::Command::Multi - do lots in parallel",
   "license": "Artistic-2.0",
   "meta-version": 0,
-  "name": "Async::Command",
+  "name": "Our::Async::Command",
   "perl": "6.d",
   "provides": {
-    "Async::Command": "lib/Async/Command.rakumod",
-    "Async::Command::Multi": "lib/Async/Command/Multi.rakumod",
-    "Async::Command::Result": "lib/Async/Command/Result.rakumod"
+    "Our::Async::Command": "lib/Our/Async/Command.rakumod",
+    "Our::Async::Command::Multi": "lib/Our/Async/Command/Multi.rakumod",
+    "Our::Async::Command::Result": "lib/Our/Async/Command/Result.rakumod"
   },
   "resources": [],
-  "source-url": "https://github.com/markldevine/raku-Async-Command.git",
+  "source-url": "https://github.com/markldevine/raku-Our-Async-Command.git",
   "tags": [ "Async" ],
-  "version": "0.2.1"
+  "version": "0.0.1"
 }

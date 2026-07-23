@@ -1,8 +1,8 @@
-unit        class Async::Command::Multi:api<1>:auth<Mark Devine (mark@markdevine.com)>;
+unit        class Our::Async::Command::Multi:api<1>:auth<Mark Devine (mark@markdevine.com)>;
 
-use         Async::Command;
+use         Our::Async::Command;
 
-subset CSpec where * ~~ List|Array|Async::Command;
+subset CSpec where * ~~ List|Array|Our::Async::Command;
 
 has UInt    $.batch is rw = 16;
 has CSpec   %.command is required;
@@ -26,12 +26,12 @@ submethod TWEAK {
 method sow () {
     $!master-promise = start {
         for %!command.keys -> $unique-id {
-            if %!command{$unique-id}.WHAT ~~ Async::Command {
+            if %!command{$unique-id}.WHAT ~~ Our::Async::Command {
                 %!command{$unique-id}.unique-id = $unique-id without %!command{$unique-id}.unique-id;
                 push @!promises, start %!command{$unique-id}.run(:time-out($!time-out), :$!delay, :$!attempts);
             }
             else {
-                my Async::Command $cmd .= new(:command(|%!command{$unique-id}), :$unique-id, :$!time-out);
+                my Our::Async::Command $cmd .= new(:command(|%!command{$unique-id}), :$unique-id, :$!time-out);
                 push @!promises, start $cmd.run(:$!delay, :$!attempts);
             }
             if @!promises == $!batch {

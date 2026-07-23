@@ -1,6 +1,6 @@
-unit        class Async::Command:api<1>:auth<Mark Devine (mark@markdevine.com)>;
+unit        class Our::Async::Command:api<1>:auth<Mark Devine (mark@markdevine.com)>;
 
-use         Async::Command::Result;
+use         Our::Async::Command::Result;
 
 has Str     @.command is required;
 has Str     $.unique-id is rw;
@@ -18,7 +18,7 @@ method run (
     my $original-time-out = $t-o;
     die 'delay (' ~ $delay ~ ')  >= (' ~ $t-o ~ ') time-out' if $delay && $delay >= $t-o;
     my $retry-attempts = $attempts;
-    my Async::Command::Result $res;
+    my Our::Async::Command::Result $res;
     my $number-of-attempts-performed = 0;
     while $retry-attempts-- > 0 {
         $res = self!execute(:time-out($t-o));
@@ -62,7 +62,7 @@ method !execute (
     my $exit-code = -1;
     $exit-code = $promise.result.exitcode if $promise.status ~~ Kept;
 
-    return Async::Command::Result.new(
+    return Our::Async::Command::Result.new(
         :@!command,
         :exit-code($exit-code),
         :$stderr-results,
@@ -87,7 +87,7 @@ method !execute (
         $ = await $promise;
         CATCH { default { $stderr-results ~=  .Str } }
     }
-    return Async::Command::Result.new(
+    return Our::Async::Command::Result.new(
         :@!command,
         :$stdout-results,
         :$stderr-results,

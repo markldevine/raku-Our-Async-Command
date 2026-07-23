@@ -1,4 +1,4 @@
-unit        class Async::Command::Result:api<1>:auth<Mark Devine (mark@markdevine.com)>;
+unit        class Our::Async::Command::Result:api<1>:auth<Mark Devine (mark@markdevine.com)>;
 
 has Str     @.command;
 has UInt    $.attempts = 1;
